@@ -1,0 +1,17 @@
+project_id = "opic-study-studio"
+
+[api]
+enabled = true
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[auth]
+enabled = true
+site_url = "http://127.0.0.1:5173"
+additional_redirect_urls = ["http://127.0.0.1:5173/**"]
+enable_signup = false
+
+[storage]
+enabled = true
+file_size_limit = "25MiB"

@@ -1,0 +1,34 @@
+# Dependencies and build output
+node_modules/
+dist/
+.pnpm-store/
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
+
+# Local and hosted secrets
+.env
+.env.*
+!.env.example
+supabase/.branches/
+supabase/.temp/
+
+# Private source material and backups
+.private-import/
+private-import/
+exports/
+backups/
+*.private.json
+
+# Local QA and runtime state
+.tmp/
+.sites-runtime/
+coverage/
+playwright-report/
+test-results/
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
