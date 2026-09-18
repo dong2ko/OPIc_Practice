@@ -15,3 +15,8 @@ enable_signup = false
 [storage]
 enabled = true
 file_size_limit = "25MiB"
+
+[functions.ask-materials]
+# The handler validates the bearer token with Auth.getUser(), then checks ownership.
+# This also supports projects using asymmetric JWT signing keys.
+verify_jwt = false

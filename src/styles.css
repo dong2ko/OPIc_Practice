@@ -216,6 +216,15 @@ h1 { max-width: 680px; margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); line-heig
 .sticky-import { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 20px; background: var(--surface-2); }
 .sticky-import span { color: var(--muted); font-size: .84rem; }
 
+.rag-page { max-width: 900px; }
+.rag-form, .rag-answer { margin-top: 24px; }
+.rag-form .rag-consent { display: flex; gap: 12px; align-items: flex-start; line-height: 1.6; }
+.rag-form .rag-consent input { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 3px; }
+.rag-answer-text, .rag-answer blockquote { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.75; }
+.rag-answer details { border-top: 1px solid var(--line); padding-top: 12px; }
+.rag-answer summary { cursor: pointer; line-height: 1.5; }
+.rag-answer blockquote { margin: 14px 0; padding-left: 16px; border-left: 3px solid var(--teal); color: var(--muted); }
+.rag-answer a { color: var(--teal); }
 .rag-state { max-width: 790px; margin: 7vh auto 0; text-align: center; }
 .rag-symbol { display: grid; width: 72px; height: 72px; place-items: center; margin: 0 auto 22px; border-radius: 22px; color: #172a3a; background: var(--accent); }
 .rag-state h1 { margin: 0 auto; font-size: clamp(2rem, 5vw, 3.6rem); }
