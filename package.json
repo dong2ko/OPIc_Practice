@@ -12,6 +12,7 @@
     "typecheck": "tsc -b --pretty false"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.57.4",
     "lucide-react": "^0.468.0",
     "mammoth": "^1.10.0",

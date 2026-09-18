@@ -26,8 +26,8 @@ select lives_ok($$insert into public.questions(topic_id,title,prompt,question_ty
 select is((select count(*)::integer from public.questions), 1, 'owner can read a question');
 select lives_ok($$update public.questions set title='Updated synthetic question', version=2$$, 'owner can update a question');
 select lives_ok($$delete from public.questions$$, 'owner can delete a question');
-select ok((select public = false from storage.buckets where id='study-materials'), 'study material bucket is private');
-
 reset role;
+select is((select public from storage.buckets where id='study-materials'), false, 'study material bucket is private');
+
 select * from finish();
 rollback;
