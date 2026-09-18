@@ -225,6 +225,7 @@ h1 { max-width: 680px; margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); line-heig
 .rag-answer summary { cursor: pointer; line-height: 1.5; }
 .rag-answer blockquote { margin: 14px 0; padding-left: 16px; border-left: 3px solid var(--teal); color: var(--muted); }
 .rag-answer a { color: var(--teal); }
+.rag-citation { padding: 0 4px; border: 0; border-radius: 4px; color: var(--teal); background: var(--surface-2); text-decoration: underline; font: inherit; cursor: pointer; }
 .rag-state { max-width: 790px; margin: 7vh auto 0; text-align: center; }
 .rag-symbol { display: grid; width: 72px; height: 72px; place-items: center; margin: 0 auto 22px; border-radius: 22px; color: #172a3a; background: var(--accent); }
 .rag-state h1 { margin: 0 auto; font-size: clamp(2rem, 5vw, 3.6rem); }
