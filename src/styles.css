@@ -169,6 +169,28 @@ h1 { max-width: 680px; margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); line-heig
 .manage-list h3 { margin: 4px 0 6px; }
 .manage-list p { max-width: 780px; margin: 0; overflow: hidden; color: var(--muted); line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
 .row-actions { display: flex; flex: 0 0 auto; gap: 8px; }
+.manage-results { justify-content: space-between; }
+.question-answer-list { gap: 16px; }
+.manage-list .manage-question-card { display: block; padding: 0; overflow: hidden; }
+.managed-question-summary { display: flex; gap: 20px; align-items: center; justify-content: space-between; padding: 20px; }
+.managed-question-summary > div:first-child { min-width: 0; }
+.managed-answers { padding: 16px 20px 20px; border-top: 1px solid var(--line); background: var(--surface-2); }
+.managed-answers > header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.managed-answers > header > div { display: flex; align-items: center; gap: 8px; }
+.managed-answers h4 { margin: 0; font-size: .95rem; }
+.managed-answers > header span { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 99px; color: var(--ink); background: var(--surface); font-size: .75rem; }
+.managed-answer-list { display: grid; gap: 8px; }
+.managed-answer { display: flex; align-items: start; justify-content: space-between; gap: 18px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.managed-answer > div:first-child { min-width: 0; }
+.managed-answer strong { display: block; margin-bottom: 5px; font-size: .9rem; }
+.managed-answer p { white-space: normal; }
+.managed-answer small { display: block; margin-top: 7px; overflow: hidden; color: var(--muted); line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
+.managed-answer .row-actions { align-items: center; }
+.danger-text { color: #b33b3b; }
+.no-answers { padding: 14px; border: 1px dashed var(--line); border-radius: 12px; white-space: normal !important; }
+.answer-question-context { margin-bottom: 18px; padding: 14px; border-radius: 12px; background: var(--surface-2); }
+.answer-question-context span { display: block; margin-bottom: 4px; color: var(--teal); font-size: .72rem; font-weight: 700; text-transform: uppercase; }
+.answer-question-context p { margin: 5px 0 0; color: var(--muted); line-height: 1.5; }
 .two-column-manage { display: grid; grid-template-columns: minmax(300px, .7fr) minmax(0, 1.3fr); gap: 18px; align-items: start; }
 .editor-card { display: grid; gap: 14px; padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
 .editor-card > svg { width: 28px; color: var(--teal); }
@@ -318,6 +340,7 @@ h1 { max-width: 680px; margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); line-heig
   .filter-panel, .form-grid { grid-template-columns: 1fr; }
   .filter-panel > *, .span-2 { grid-column: 1; }
   .manage-list article { align-items: stretch; flex-direction: column; }
+  .managed-question-summary, .managed-answer, .managed-answers > header { align-items: stretch; flex-direction: column; }
   .row-actions { width: 100%; }
   .row-actions > * { flex: 1; }
   .inventory-numbers { width: 100%; justify-content: space-between; }

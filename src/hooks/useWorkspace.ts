@@ -269,7 +269,19 @@ export function useWorkspace(session: Session | null) {
 
   const saveAnswer = async (input: { id?: string; version?: number; questionId: string; label: string; englishText: string; koreanExplanation: string }) => {
     if (DEMO_MODE) {
-      setNotice("Answer editing is available after Supabase is connected.");
+      const existing = data.answers.find((answer) => answer.id === input.id);
+      const item: WorkspaceData["answers"][number] = {
+        id: input.id || `demo-answer-${crypto.randomUUID()}`,
+        question_id: input.questionId,
+        label: input.label,
+        english_text: input.englishText,
+        korean_explanation: input.koreanExplanation || null,
+        sort_order: existing?.sort_order || data.answers.filter((answer) => answer.question_id === input.questionId).length + 1,
+        version: (input.version || 0) + 1,
+        archived_at: null,
+      };
+      setData((current) => ({ ...current, answers: input.id ? current.answers.map((answer) => answer.id === input.id ? item : answer) : [...current.answers, item] }));
+      setNotice("Preview answer saved on this device only.");
       return;
     }
     const record = {
