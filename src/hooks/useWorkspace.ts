@@ -32,6 +32,7 @@ function safeFileName(name: string): string {
 }
 
 export function useWorkspace(session: Session | null) {
+  const userId = session?.user.id;
   const [data, setData] = useState<WorkspaceData>(DEMO_MODE ? demoWorkspace : emptyWorkspace);
   const [trash, setTrash] = useState<{ questions: StudyQuestion[]; answers: WorkspaceData["answers"]; guides: GuideArticle[] }>({ questions: [], answers: [], guides: [] });
   const [loading, setLoading] = useState(!DEMO_MODE);
@@ -44,7 +45,7 @@ export function useWorkspace(session: Session | null) {
       setLoading(false);
       return;
     }
-    if (!supabase || !session) return;
+    if (!supabase || !userId) return;
     setLoading(true);
     setError(null);
     const [topics, questions, answers, expressions, notes, guides, progress, favorites, tags, questionTags, documents, trashedQuestions, trashedAnswers, trashedGuides] = await Promise.all([
@@ -88,17 +89,17 @@ export function useWorkspace(session: Session | null) {
       guides: (trashedGuides.data || []) as unknown as GuideArticle[],
     });
     setLoading(false);
-  }, [session]);
+  }, [userId]);
 
   useEffect(() => {
-    if (!DEMO_MODE && !session) {
+    if (!DEMO_MODE && !userId) {
       setData(emptyWorkspace);
       setLoading(false);
       setError(null);
       return;
     }
     void load();
-  }, [load]);
+  }, [load, userId]);
 
   const updateStatus = async (questionId: string, status: ProgressStatus) => {
     const previous = data.progress;
