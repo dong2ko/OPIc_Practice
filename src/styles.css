@@ -179,12 +179,12 @@ h1 { max-width: 680px; margin: 0; font-size: clamp(2rem, 4vw, 3.6rem); line-heig
 .managed-answers > header > div { display: flex; align-items: center; gap: 8px; }
 .managed-answers h4 { margin: 0; font-size: .95rem; }
 .managed-answers > header span { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 99px; color: var(--ink); background: var(--surface); font-size: .75rem; }
-.managed-answer-list { display: grid; gap: 8px; }
+.managed-answer-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
 .managed-answer { display: flex; align-items: start; justify-content: space-between; gap: 18px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
-.managed-answer > div:first-child { min-width: 0; }
-.managed-answer strong { display: block; margin-bottom: 5px; font-size: .9rem; }
-.managed-answer p { white-space: normal; }
-.managed-answer small { display: block; margin-top: 7px; overflow: hidden; color: var(--muted); line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
+.managed-answer > div:first-child { flex: 1; min-width: 0; }
+.managed-answer strong { display: block; margin-bottom: 5px; overflow-wrap: anywhere; font-size: .9rem; }
+.managed-answer p { overflow-x: auto; text-overflow: clip; white-space: normal; }
+.managed-answer small { display: block; margin-top: 7px; overflow-x: auto; color: var(--muted); line-height: 1.5; white-space: nowrap; }
 .managed-answer .row-actions { align-items: center; }
 .danger-text { color: #b33b3b; }
 .no-answers { padding: 14px; border: 1px dashed var(--line); border-radius: 12px; white-space: normal !important; }
